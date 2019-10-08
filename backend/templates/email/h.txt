@@ -1,0 +1,3 @@
+Hello {{name}}
+{{hospital_no}}
+Welcome to the Moringa tribune newsletter You will find the most exciting news about Moringa School
