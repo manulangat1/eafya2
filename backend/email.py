@@ -11,3 +11,14 @@ def send_hospital_number(name,hospital_no,receiver):
     msg = EmailMultiAlternatives(subject,text_content,sender,[receiver])
     msg.attach_alternative(html_content,'text/html')
     msg.send()
+def send_periodic_email(name):
+    subject = "EAFYA KENYA "
+    sender = "emmanuelthedeveloper@gmail.com"
+
+    text_content = render_to_string('email/p.txt',{"name":name})
+    html_content = render_to_string('email/p.html',{"name":name})
+
+    msg = EmailMultiAlternatives(subject,name,[receiver])
+    msg.attach_alternative(html_content,'text/html')
+
+    mmsg.send()

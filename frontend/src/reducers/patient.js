@@ -1,7 +1,8 @@
-import {GET_PATIENT} from '../actions/types'
+import {GET_PATIENT,ADD_PATIENT} from '../actions/types'
 
 const initialState  = {
-    patient:[]
+    patient:[],
+    patiens: {}
 }
 export default function(state=initialState,action){
     switch(action.type){
@@ -10,7 +11,13 @@ export default function(state=initialState,action){
                 ...state,
                 patient: action.payload
             }
+        case ADD_PATIENT:
+            return {
+                ...state,
+                patiens: action.payload
+            }
         default:
             return state
     }
+    
 }
