@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Patient,History,Home,HomePic,About,Help
+from .models import Patient,History,Home,HomePic,About,Help,Appointment
 import random
 
 class PatientSerializer(serializers.ModelSerializer):
@@ -13,7 +13,15 @@ class PatientSerializer(serializers.ModelSerializer):
             'hospital_no',
             'location',
         )
-   
+class AppointmentSerializer(serializers.ModelSerializer):
+    patient  = serializers.SlugRelatedField(queryset=Patient.objects.all(),slug_field='hospital_no')
+    class Meta:
+        model = Appointment
+        fields = (
+            'patient',
+            'appointment_date',
+            'appointment_time'
+        )
 class HistorySerializer(serializers.ModelSerializer):
     patient  = serializers.SlugRelatedField(queryset=Patient.objects.all(),slug_field='hospital_no')
     class Meta:

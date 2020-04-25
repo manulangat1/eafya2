@@ -45,3 +45,10 @@ class Help(models.Model):
 
     def __str__(self):
         return self.name
+class Appointment(models.Model):
+    patient = models.ForeignKey(Patient,on_delete=models.CASCADE)
+    appointment_date = models.DateField()
+    appointment_time = models.TimeField()
+
+    def __str__(self):
+        return self.patient.name

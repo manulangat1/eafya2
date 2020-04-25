@@ -10,6 +10,7 @@ import search from './search'
 import help from './help'
 import about from './about'
 import addRecord from './addRecord'
+import appoint from './appoint'
 export default combineReducers({
     home,
     patient,
@@ -21,5 +22,6 @@ export default combineReducers({
     search,
     help,
     about,
-    addRecord
+    addRecord,
+    appoint
 })

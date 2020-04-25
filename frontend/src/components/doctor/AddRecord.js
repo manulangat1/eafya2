@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {addRecord} from '../../actions/addRecord'
+import { Link} from 'react-router-dom'
 import '../App.css'
 
 class AddRecord  extends React.Component{
@@ -30,18 +31,19 @@ class AddRecord  extends React.Component{
                     </div>
                     <form onSubmit={this.onSubmit} >
                         <div className="form-group">
-                            <label>Patient Name</label>
-                            <input className="form-control" type="number" name="patient" onChange={this.onChange} value={patient} />
+                            <label>Patient number</label>
+                            <input placeholder="Enter patient number here" required className="form-control" type="number" name="patient" onChange={this.onChange} value={patient} />
                         </div>
                         <div className="form-group">
-                            <label>disease</label>
-                            <textarea className="form-control" type="text" name="disease" onChange={this.onChange} value={disease}/>
+                            <label>disease suffering from</label>
+                            <textarea placeholder="Enter disease patient is suffering from here" required className="form-control" type="text" name="disease" onChange={this.onChange} value={disease}/>
                         </div>
                         <div className="form-group">
                             <label>Prescription</label>
-                            <textarea className="form-control" type="text" name="text" onChange={this.onChange} value={text}/>
+                            <textarea placeholder="Enter prescription  here" required className="form-control" type="text" name="text" onChange={this.onChange} value={text}/>
                         </div>
                         <input type="submit" value="Add Record" className="primary-btn"/>
+                        <Link to="/add" className="secondary-btn">Or add an appointment here</Link>
                     </form>
                 </div>
             </div>

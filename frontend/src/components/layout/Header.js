@@ -10,10 +10,10 @@ class Header extends React.Component{
 
         const authLinks = (
             <ul className="link">
-            {/* <Record /> */}
             <li> <Link to="/addPatient">Add Patient</Link> </li>
-            <li> <Link to="/history">Get Hisory</Link> </li>
-            <li><Link to="/addRecords">Add a record</Link></li>
+            <li> <Link to="/history">Get History</Link> </li>
+            <li><Link to="/addRecords">Add record</Link></li>
+            {/* <li><Link to="/add">Add appointment</Link></li> */}
             <li><button className="primary-btn" onClick={this.props.logout}>Logout</button></li>
         </ul>
         )

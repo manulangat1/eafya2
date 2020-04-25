@@ -26,22 +26,20 @@ class Login extends React.Component{
                 <div id="left">
                 <div id="signin">
                     <div className="logo">
-                        <h1>Login</h1>
+                        
                     </div>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
                     <label>Name</label>
-                    <input className="form-control" type="text" name="username" onChange={this.onChange} value={username} />
+                    <input minlength="8" required placeholder="Enter your username here"className="form-control" type="text" name="username" onChange={this.onChange} value={username} />
                     </div>
                     <div className="form-group">
                     <label>Password</label>
-                    <input className="form-control" type="password" name="password" onChange={this.onChange} value={password} />
+                    <input minlength="8" required placeholder="Enter your password here" className="form-control" type="password" name="password" onChange={this.onChange} value={password} />
                     </div>
                     <input type="submit" value="submit" className="primary-btn" />
                 </form>
                 <div className="links">
-                        <a href="#">Dont have an account Register</a>
-                        <a href="#">Dont have an account Register</a>
                     </div>
                     <div className="or">
                         <hr className="bar"></hr>

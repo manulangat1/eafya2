@@ -26,8 +26,9 @@ class Register extends React.Component{
                 email
             }
             this.props.register(newUser)
-            return <Redirect to="/" />
             this.setState({username:"",email:"",password:"",password2:""})
+            return <Redirect to="/" />
+            
             
         }
         
@@ -43,19 +44,19 @@ class Register extends React.Component{
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
                     <label>Name</label>
-                    <input className="form-control" type="text" name="username" onChange={this.onChange} value={username} />
+                    <input  minlength="8" required placeholder="Enter your username here" className="form-control" type="text" name="username" onChange={this.onChange} value={username} />
                     </div>
                     <div className="form-group">
                     <label>Email</label>
-                    <input className="form-control" type="email" name="email" onChange={this.onChange} value={email} />
+                    <input required placeholder="Enter your email here" className="form-control" type="email" name="email" onChange={this.onChange} value={email} />
                     </div>
                     <div className="form-group">
                     <label>Password</label>
-                    <input type="password" className="form-control" name="password" onChange={this.onChange} value={password} />
+                    <input minlength="8" required placeholder="Enter your password here" type="password" className="form-control" name="password" onChange={this.onChange} value={password} />
                     </div>
                     <div className="form-group">
-                    <label>Password2</label>
-                    <input type="password" name="password2" className="form-control" onChange={this.onChange} value={password2} />
+                    <label>Re-enter password to Confirm</label>
+                    <input minlength="8" required placeholder="Confirm password" type="password" name="password2" className="form-control" onChange={this.onChange} value={password2} />
                     </div>
                     <input type="submit" value="submit" className="primary-btn" />
                 </form>

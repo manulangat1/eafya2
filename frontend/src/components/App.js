@@ -13,6 +13,7 @@ import Register from  './accounts/Register'
 import PrivateRoute from  './common/PrivateRoute'
 import Form from './doctor/Form'
 import Record from './doctor/Record'
+import AddAppoint from './doctor/AddAppoint'
 //redux import s
 import {Provider} from 'react-redux'
 import store from '../store'
@@ -42,6 +43,7 @@ class App extends React.Component{
                 <Alerts />
                 <Switch>
                     <PrivateRoute exact path="/" component={Dashboard} />
+                    <section id="all">
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/register" component={Register}/>
                     <Route exact path="/about" component={About}/>
@@ -49,6 +51,8 @@ class App extends React.Component{
                     <PrivateRoute exact path="/addPatient" component={Form} />
                     <PrivateRoute exact path="/history" component={Record} />
                     <PrivateRoute exact path="/addRecords" component={AddRecord} />
+                    <PrivateRoute exact path="/add" component={AddAppoint} />
+                    </section>
                 </Switch>
                 <Footer />
             </div>
