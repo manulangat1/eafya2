@@ -41,15 +41,10 @@ class Login extends React.Component{
                 </form>
                 <div className="links">
                     </div>
-                    <div className="or">
-                        <hr className="bar"></hr>
-                        <span>OR</span>
-                        <hr className="bar"></hr>
-                    </div>
                     <Link to="/register" className="secondary-btn">Create an account</Link>
                 </div>
                 <footer id="main-footer">
-                    <p>Copyright &copy;2019, Eafya Systems All right reservered</p>
+                    <p>Copyright &copy;2020, Eafya Systems All right reservered</p>
                     <a href="#">Terms of use</a> | <a href="#">Privacy Policy</a> 
                 </footer>
                 </div>

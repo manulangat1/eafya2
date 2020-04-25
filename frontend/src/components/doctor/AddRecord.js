@@ -43,7 +43,7 @@ class AddRecord  extends React.Component{
                             <textarea placeholder="Enter prescription  here" required className="form-control" type="text" name="text" onChange={this.onChange} value={text}/>
                         </div>
                         <input type="submit" value="Add Record" className="primary-btn"/>
-                        <Link to="/add" className="secondary-btn">Or add an appointment here</Link>
+                        <Link to="/add" className="primary-btn">Or add an appointment here</Link>
                     </form>
                 </div>
             </div>

@@ -163,7 +163,7 @@ h1,h2,h3,h4,h5,h6{
     text-align: center;
     font-size: 0.9rem;
 }
-#signin .or{
+/* #signin .or{
     display:flex;
     flex-direction:row;
     margin-bottom:1.2rem;
@@ -178,7 +178,7 @@ h1,h2,h3,h4,h5,h6{
 #signin .or span{
     color: #ccc;
     padding: 0 0.8rem;
-}
+} */
 /* #showcase{
     
 } */

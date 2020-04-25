@@ -102,6 +102,6 @@ def send_sms():
                 else:
                     print("time passed")
 def broadcast_sms(request):
-    print(request.user)
+    # print(request.user.hospital_no)
     send_sms()
     return HttpResponse("messages sent!", 200)
