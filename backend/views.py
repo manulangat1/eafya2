@@ -74,9 +74,8 @@ class HistorysView(generics.ListAPIView):
 class AppointmentView(generics.ListCreateAPIView):
     queryset = Appointment.objects.all()
     serializer_class = AppointmentSerializer
-def broadcast_sms(request):
-    message_to_broadcast = ("Have you played the incredible TwilioQuest "
-                                                "yet? Grab it here: https://www.twilio.com/quest")
+def send_sms():
+    message_to_broadcast = ("Hey you have an appointment coming up in 30 mins ")
     client = Client(settings.TWILIO_ACCOUNT_SID, settings.TWILIO_AUTH_TOKEN)
     for appointment in Appointment.objects.all():
         if appointment.appointment_date == datetime.date(datetime.now()):
@@ -84,12 +83,25 @@ def broadcast_sms(request):
                     print(appointment.appointment_date,appointment.appointment_time)
                     z = datetime.combine(appointment.appointment_date, appointment.appointment_time) - datetime.combine(date.today(),datetime.now().time())
                     x = z.total_seconds()/ 60
+                    # print(datetime.date(datetime.now()))
                     print(x)
                     if x < 30:
-                        client.messages.create(to="+254740415950",
-                                            from_=settings.TWILIO_NUMBER,
-                                            body=message_to_broadcast)
-                        print("sent")
+                        if appointment.sent_message == False:
+                            client.messages.create(to="+254740415950",
+                                                from_=settings.TWILIO_NUMBER,
+                                                body=message_to_broadcast)
+                            t = True
+                            appointment.sent_message = t
+                            appointment.save()
+                            print(appointment.sent_message)
+                            print("sent")
+                        else:
+                            print("Already sent")
+                    else:
+                        print("not yet")
                 else:
                     print("time passed")
-        return HttpResponse("messages sent!", 200)
+def broadcast_sms(request):
+    print(request.user)
+    send_sms()
+    return HttpResponse("messages sent!", 200)

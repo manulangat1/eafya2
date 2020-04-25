@@ -49,6 +49,6 @@ class Appointment(models.Model):
     patient = models.ForeignKey(Patient,on_delete=models.CASCADE)
     appointment_date = models.DateField()
     appointment_time = models.TimeField()
-
+    sent_message = models.BooleanField(default=False)
     def __str__(self):
         return self.patient.name
