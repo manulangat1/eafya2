@@ -7,6 +7,7 @@ class Patient(models.Model):
     id_no = models.PositiveIntegerField(unique=True)
     hospital_no = models.IntegerField(null=True,unique=True)
     location = models.CharField(max_length=140)
+    phone_number = models.CharField(max_length=20,blank=True,null=True)
     
     def __str__(self):
         return '{} {}'.format(self.name,self.date_of_birth)
@@ -50,5 +51,6 @@ class Appointment(models.Model):
     appointment_date = models.DateField()
     appointment_time = models.TimeField()
     sent_message = models.BooleanField(default=False)
+    sent_message_day = models.BooleanField(default=False)
     def __str__(self):
         return self.patient.name

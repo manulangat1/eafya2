@@ -12,6 +12,8 @@ class PatientSerializer(serializers.ModelSerializer):
             'date_of_birth',
             'hospital_no',
             'location',
+            'email',
+            'phone_number'
         )
 class AppointmentSerializer(serializers.ModelSerializer):
     patient  = serializers.SlugRelatedField(queryset=Patient.objects.all(),slug_field='hospital_no')
@@ -53,7 +55,8 @@ class PatientDetailsSerializer(serializers.ModelSerializer):
         fields = [
             'name',
             'hospital_no',
-            'history'
+            'history',
+            'phone_number'
         ]
 class HomePicSerializer(serializers.ModelSerializer):
     class Meta:

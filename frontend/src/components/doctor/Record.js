@@ -36,7 +36,7 @@ class Record  extends React.Component{
                         <div>
                     <form onSubmit={this.onSubmit} className="form-inline md-form mr-auto mb-4">
                         <div className="form-group">
-                            <input type="number" className="form-control" name="search"  value={this.state.search} onChange={this.onChange} placeholder="enter hospital number" />
+                            <input type="number" required className="form-control" name="search"  value={this.state.search} onChange={this.onChange} placeholder="enter hospital number" />
                         </div>
                         <input type="submit" value="search" className="btn aqua-gradient btn-rounded btn-sm my-0"/>
                     </form>
